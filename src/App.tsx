@@ -1,29 +1,23 @@
-
-import DateTimePretty from "./components/time/DateTimePretty";
+import Aggregation from "./components/aggregation/Aggregation";
+import Highlight from "./components/highlight/Highlight";
 import Time from "./components/time/Time";
 
-// function DateTime(props) {
-//   return <p className="date">{props.date}</p>;
-// }
-export type TData = {
-  url: string;
-  date: string;
-}
-
-export interface IProps {
-  data: TData;
-}
-
-
 export default function App() {
-  
-return (
-  <>
-    <Time />
-    <DateTimePretty />
-  </>
-)
-
-
-  
+  return (
+    <>
+      <h1>HOC — Higher Order Components</h1>
+      <div className="task">
+        <h4>Задача 1. Форматирование даты публикации</h4>
+        <Time />
+      </div>
+      <div className="task">
+        <h4>Задача 2.Подсвечивание блоков</h4>
+        <Highlight />
+      </div>
+      <div className="task">
+        <h4>Задача 3.Агрегация данных для таблиц — необязательная задача.</h4>
+        <Aggregation />
+      </div>
+    </>
+  );
 }

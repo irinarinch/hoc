@@ -1,14 +1,23 @@
+import { IProps } from "./Video";
+import { TData } from "./VideoList";
+import { FC } from "react";
 import moment from "moment";
 
-const DateTimePretty = () => {
-  const string = "2023-12-28 10:39:00";
-  let arr = string.split(/\ |\-|:/);
-  arr[1] = (+arr[1] - 1).toString();
+const DateTimePretty = ( Component: FC<IProps> ) => {
+  return function ({ data }: IProps) {
+    const { date, ...otherProps } = data;
+    const arr = date.split(/ |-|:/);
 
-  const date = moment(arr).fromNow();
-  return (
-    <div>{date}</div>    
-  )
+    arr[1] = (+arr[1] - 1).toString();
+
+    const formated = moment(arr).fromNow();
+    const newData: TData = {
+      ...otherProps,
+      date: formated,
+    };
+
+    return <Component data={newData} />;
+  }; 
 };
 
 export default DateTimePretty;

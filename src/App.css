@@ -2,7 +2,16 @@ body {
   font-family: 'Mina', sans-serif;
 }
 
-#root {
+h1 {
+  text-align: center;  
+}
+
+h4 {
+  text-align: center;
+  margin: 1em;
+}
+
+.video-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -30,3 +39,4 @@ body {
   font-size: 80%;
   color: #cccccc;
 }
+

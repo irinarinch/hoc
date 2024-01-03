@@ -1,5 +1,9 @@
-import Video from './Video';
-import { TData } from '../../App';
+import Video from "./Video";
+
+export type TData = {
+  url: string;
+  date: string;
+};
 
 interface IList {
   list: TData[];
@@ -7,8 +11,12 @@ interface IList {
 
 const VideoList = ({ list }: IList) => {
   return (
-    list.map((item) => <Video data={item} />)
-  )
-}
+    <div className="video-container">
+      {list.map((item) => (
+        <Video key={item.date} data={item} />
+      ))}
+    </div>
+  );
+};
 
 export default VideoList;

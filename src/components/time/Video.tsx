@@ -1,5 +1,9 @@
-import { IProps } from "../../App";
 import DateTime from "./DateTime";
+import { TData } from "./VideoList";
+
+export interface IProps {
+  data: TData;
+}
 
 const Video = ({ data }: IProps) => {
   return (
@@ -12,7 +16,7 @@ const Video = ({ data }: IProps) => {
       ></iframe>
       <DateTime data={data} />
     </div>
-  );
+  )
 };
 
 export default Video;

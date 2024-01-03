@@ -1,27 +1,8 @@
-import { IProps } from "../../App";
+import DateTimePretty from "./DateTimePretty";
+import { IProps } from "./Video";
 
-const DateTime = ({ data } : IProps) => {
-  const { date } = data;
+const DateTime = ({ data }: IProps) => {
+  return <p className="date">{data.date}</p>;
+}
 
-  return <p className="date">{date}</p>;
-};
-
-export default DateTime;
-
-
-// import { Component } from 'react';
-// interface IProps {
-//   list: TData[];
-// }
-
-// export default class DateTime extends Component<IProps> {
-//   constructor(props: IProps) {
-//     super(props);
-//   }
-
-//   render() {
-//     return (
-//       this.props.list.map((item) => <Video url={item.url} date={item.date} />)
-//     )
-//   }
-// }
+export default DateTimePretty(DateTime);
